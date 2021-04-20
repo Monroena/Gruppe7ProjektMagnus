@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LægeLogin">
+   <children>
+      <Accordion layoutX="163.0" layoutY="101.0" />
+      <TabPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: #42cef5#42#42cef5#42cef5cef5;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Patienter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="Patientvælger" layoutX="10.0" layoutY="33.0" prefHeight="22.0" prefWidth="82.0" />
+                        <Button fx:id="patientknap" layoutX="52.0" layoutY="68.0" mnemonicParsing="false" onAction="#gåTilPatient" prefHeight="27.0" prefWidth="42.0" text="OK" />
+                        <TabPane layoutX="94.0" prefHeight="369.0" prefWidth="507.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Puls">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="492.0">
+                                       <children>
+                                          <TableView fx:id="table" layoutX="1.0" prefHeight="336.0" prefWidth="506.0">
+                                            <columns>
+                                              <TableColumn fx:id="dato" prefWidth="126.5" text="Dato" />
+                                              <TableColumn fx:id="morgen" prefWidth="126.5" text="Morgenpuls" />
+                                                <TableColumn fx:id="middag" prefWidth="126.5" text="Middagspuls" />
+                                                <TableColumn fx:id="aften" prefWidth="126.5" text="Aftenpuls" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Temperatur">
+                                <content>
+                                  <AnchorPane fx:id="tableTemperatur" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab fx:id="tableSpo2" text="Spo2">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                            <Tab fx:id="tableEKG" text="EKG">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                        <Text layoutX="15.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vælg patient" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Patientdata">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+          <Tab text="Noter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="64.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføj kommentarer:" />
+                        <ChoiceBox layoutX="64.0" layoutY="55.0" prefWidth="150.0" />
+                        <Button layoutX="159.0" layoutY="96.0" mnemonicParsing="false" text="OK" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
