@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Main extends Application {
@@ -22,8 +21,8 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public void changeScene(String fmxl) throws IOException{
-        Parent pane=FXMLLoader.load(getClass().getResource(fmxl));
+    public void changeScene(String fxml) throws IOException{
+        Parent pane=FXMLLoader.load(getClass().getResource(fxml));
         loginStage.getScene().setRoot(pane);
     }
 
