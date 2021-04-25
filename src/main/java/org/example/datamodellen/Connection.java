@@ -12,7 +12,6 @@ public class Connection {
     }
 
 
-
     java.sql.Connection getMySQLConnection(String username, String password, String Schema) {
         url = MYSQLDriver + Schema + "?serverTimezone=Europe/Amsterdam&amp";
         try {
@@ -28,5 +27,31 @@ public class Connection {
             e.printStackTrace();
         }
         return connection;
+    }
+
+
+    private Statement statement;
+    private PreparedStatement preparedStatement;
+    private ResultSet resultSet;
+
+
+    public void insertMeasurementsIntoTable(int id){
+
+        int randomPuls = (int) (40+(Math.random() * 100));
+        double randomTemp = (20+(Math.random() * 25));
+        String SQL ="insert into maalinger(temp,puls) values(?,?);";
+
+        try {
+            preparedStatement = connection.prepareStatement(SQL);
+
+            preparedStatement.setDouble(1,randomTemp);
+            preparedStatement.setDouble(2,randomPuls);
+
+
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
     }
 }
