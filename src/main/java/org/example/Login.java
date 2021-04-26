@@ -23,19 +23,17 @@ public class Login {
     @FXML
     private Label wronglogin;
 
-
     @FXML
     private void userLogin(ActionEvent event) throws IOException {
         checkLoginpatient();
         checkLoginHealthPersonel();
-
     }
 
     private void checkLoginpatient() throws IOException {
         Main main = new Main();
         if (username.getText().toString().equals("patient") && password.getText().equals("patient")) {
             wronglogin.setText("Success!");
-            main.changeScene("sample/afterLogin.fxml");
+            main.changeScene("src/main/resources/org/example/login.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wronglogin.setText("Indsæt din data");
         } else {
@@ -47,7 +45,7 @@ public class Login {
         Main main = new Main();
         if (username.getText().toString().equals("hp") && password.getText().equals("hp")) {
             wronglogin.setText("Success!");
-            main.changeScene("sample/lægeLogin.fxml");
+            main.changeScene("org.example/lægeLogin.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wronglogin.setText("Indsæt din data");
         } else {

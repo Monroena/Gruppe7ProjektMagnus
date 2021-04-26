@@ -8,9 +8,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LægeLogin">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LægeLogin">
    <children>
       <Accordion layoutX="163.0" layoutY="101.0" />
       <TabPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: #42cef5#42#42cef5#42cef5cef5;" tabClosingPolicy="UNAVAILABLE">
@@ -20,7 +21,10 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ChoiceBox fx:id="Patientvælger" layoutX="10.0" layoutY="33.0" prefHeight="22.0" prefWidth="82.0" />
-                        <Button fx:id="patientknap" layoutX="52.0" layoutY="68.0" mnemonicParsing="false" onAction="#gåTilPatient" prefHeight="27.0" prefWidth="42.0" text="OK" />
+                        <Button fx:id="patientknap" layoutX="52.0" layoutY="68.0" mnemonicParsing="false" onAction="#gåTilPatient" prefHeight="27.0" prefWidth="42.0" text="OK">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="12.0" />
+                           </font></Button>
                         <TabPane layoutX="94.0" prefHeight="369.0" prefWidth="507.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="Puls">
@@ -56,7 +60,10 @@
                             </Tab>
                           </tabs>
                         </TabPane>
-                        <Text layoutX="15.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vælg patient" />
+                        <Text layoutX="15.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vælg patient">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="13.0" />
+                           </font></Text>
                      </children>
                   </AnchorPane>
             </content>
@@ -70,9 +77,15 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="64.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføj kommentarer:" />
+                        <Text layoutX="64.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføj kommentarer:">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="12.0" />
+                           </font></Text>
                         <ChoiceBox layoutX="64.0" layoutY="55.0" prefWidth="150.0" />
-                        <Button layoutX="159.0" layoutY="96.0" mnemonicParsing="false" text="OK" />
+                        <Button layoutX="159.0" layoutY="96.0" mnemonicParsing="false" text="OK">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="18.0" />
+                           </font></Button>
                      </children></AnchorPane>
             </content>
           </Tab>

@@ -12,7 +12,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class afterlogin implements Initializable {
 
     @FXML
     private TabPane tabpain;
