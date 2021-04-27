@@ -16,6 +16,7 @@
       <Accordion layoutX="163.0" layoutY="101.0" />
       <TabPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: #42cef5#42#42cef5#42cef5cef5;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
+
           <Tab text="Patienter">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">

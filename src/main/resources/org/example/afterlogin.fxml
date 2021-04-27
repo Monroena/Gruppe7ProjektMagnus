@@ -10,20 +10,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabpain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.afterlogin">
+<TabPane fx:id="tabpain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.afterlogin">
   <tabs>
       <Tab text="Velkommen">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Text layoutX="40.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen." wrappingWidth="510.9072265625" />
-                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For at navigere rundt i dine data, kan du trykke på fanerne øverst på siden." wrappingWidth="401.27783203125" />
-                  <Text layoutX="40.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright© - MSG group" />
+                  <Text layoutX="40.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen." wrappingWidth="510.9072265625">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font></Text>
+                  <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For at navigere rundt i dine data, kan du trykke på fanerne øverst på siden." wrappingWidth="401.27783203125">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font></Text>
+                  <Text layoutX="40.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright© - MSG group">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font></Text>
                </children>
             </AnchorPane>
         </content>
       </Tab>
-    <Tab text="Puls">
+    <Tab text="Pulse">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="596.0">
                <children>
@@ -38,7 +47,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab text="Temperatur">
+      <Tab text="Temperature">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -88,12 +97,21 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextArea layoutX="35.0" layoutY="98.0" prefHeight="200.0" prefWidth="441.0" />
-                  <Text layoutX="35.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Her kan du skrive til egen læge, ved spørgsmål" wrappingWidth="295.419921875" />
-                  <Button layoutX="429.0" layoutY="304.0" mnemonicParsing="false" text="Send" />
+                  <TextArea layoutX="35.0" layoutY="98.0" prefHeight="200.0" prefWidth="441.0">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="12.0" />
+                     </font></TextArea>
+                  <Text layoutX="35.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Her kan du skrive til egen læge, ved spørgsmål" wrappingWidth="295.419921875">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="12.0" />
+                     </font></Text>
+                  <Button layoutX="429.0" layoutY="304.0" mnemonicParsing="false" text="Send">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="12.0" />
+                     </font></Button>
                   <Text layoutX="35.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ring på 67568970  ved mere akute behov" wrappingWidth="345.91796875">
                      <font>
-                        <Font size="8.0" />
+                        <Font name="Microsoft Sans Serif" size="12.0" />
                      </font>
                   </Text>
                </children>
