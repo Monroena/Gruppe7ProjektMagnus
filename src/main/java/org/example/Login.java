@@ -33,7 +33,7 @@ public class Login {
         Main main = new Main();
         if (username.getText().toString().equals("patient") && password.getText().equals("patient")) {
             wronglogin.setText("Success!");
-            main.changeScene("src/main/resources/org/example/login.fxml");
+            main.changeScene("afterlogin.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wronglogin.setText("Indsæt din data");
         } else {
@@ -45,7 +45,7 @@ public class Login {
         Main main = new Main();
         if (username.getText().toString().equals("hp") && password.getText().equals("hp")) {
             wronglogin.setText("Success!");
-            main.changeScene("org.example/lægeLogin.fxml");
+            main.changeScene("lægelogin.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wronglogin.setText("Indsæt din data");
         } else {

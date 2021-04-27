@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Locale;
 
 public class Main extends Application {
 
@@ -22,6 +23,7 @@ public class Main extends Application {
     }
 
     public void changeScene(String fxml) throws IOException{
+        fxml = fxml.toLowerCase(Locale.ROOT);
         Parent pane=FXMLLoader.load(getClass().getResource(fxml));
         loginStage.getScene().setRoot(pane);
     }
