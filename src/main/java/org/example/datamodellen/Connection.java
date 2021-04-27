@@ -1,6 +1,7 @@
 package org.example.datamodellen;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Connection {
 
@@ -45,15 +46,34 @@ public class Connection {
 
             try {
                 preparedStatement = connection.prepareStatement(SQL);
-
                 preparedStatement.setDouble(1, randomTemp);
                 preparedStatement.setInt(2, randomPuls);
                 preparedStatement.setInt(3, randomSpO2);
-
                 preparedStatement.execute();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
+    }
+    public void findAllMeasurementsFromPatient(int PatientID){
+        ArrayList liste= new ArrayList();
+
+        String SQL="SELECT * FROM projektsilledb.maalinger where temp="+PatientID+";";
+
+        try{
+            statement=connection.createStatement();
+            resultSet=statement.executeQuery(SQL);
+            while (resultSet.next()){
+                //hvad skal vi have ud?
+                System.out.println(
+                        "id: "+resultSet.getInt(1)+"\n"+
+                                "puls:"+resultSet.getInt("puls")
+                );
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
     }
 }
