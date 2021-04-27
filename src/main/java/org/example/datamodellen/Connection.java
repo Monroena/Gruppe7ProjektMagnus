@@ -37,21 +37,22 @@ public class Connection {
 
     public void insertMeasurementsIntoTable(int id){
 
-        int randomPuls = (int) (40+(Math.random() * 100));
-        double randomTemp = (20+(Math.random() * 25));
-        String SQL ="insert into maalinger(temp,puls) values(?,?);";
+        for(int n=0; n<10; n++) {
+            int randomPuls = (int) (40 + (Math.random() * 100));
+            double randomTemp = (20 + (Math.random() * 25));
+            String SQL = "insert into maalinger(temp,puls) values(?,?);";
 
-        try {
-            preparedStatement = connection.prepareStatement(SQL);
+            try {
+                preparedStatement = connection.prepareStatement(SQL);
 
-            preparedStatement.setDouble(1,randomTemp);
-            preparedStatement.setDouble(2,randomPuls);
+                preparedStatement.setDouble(1, randomTemp);
+                preparedStatement.setDouble(2, randomPuls);
 
 
-            preparedStatement.execute();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+                preparedStatement.execute();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
-
     }
 }
