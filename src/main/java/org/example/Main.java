@@ -25,7 +25,9 @@ public class Main extends Application {
     public void changeScene(String fxml) throws IOException{
         fxml = fxml.toLowerCase(Locale.ROOT);
         Parent pane=FXMLLoader.load(getClass().getResource(fxml));
+
         loginStage.getScene().setRoot(pane);
+
     }
 
     public static void main(String[] args) {
