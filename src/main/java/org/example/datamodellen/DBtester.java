@@ -12,11 +12,12 @@ public class DBtester {
 
 
 
-
         for(int n=0; n<10; n++){
             MySQL.findAllMeasurementsFromPatient(n);
             System.out.println("--------");
         }
+
+
 
 
     }

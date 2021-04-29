@@ -6,4 +6,6 @@ module org.example {
 
     opens org.example to javafx.fxml;
     exports org.example;
+    exports org.example.datamodellen;
+    opens org.example.datamodellen to javafx.fxml;
 }

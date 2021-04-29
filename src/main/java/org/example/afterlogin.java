@@ -1,5 +1,6 @@
 package org.example;
 
+import com.mysql.cj.xdevapi.Table;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,9 +9,14 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class afterlogin implements Initializable {
 
@@ -37,22 +43,26 @@ public class afterlogin implements Initializable {
     //TemperaturGUI - - - - - - - - - - - - - - - - SLUT
 
 
-
     //PulsGUI - - - - - - - - - - - - - - - - - - - START
-    @FXML
-    private TableView<Puls> table;
+
 
     @FXML
-    private TableColumn<Puls, Integer> morgen;
+    private TableView<Maalinger> table;
 
     @FXML
-    private TableColumn<Puls, Integer> middag;
+    private TableColumn<Maalinger, String> id;
 
     @FXML
-    private TableColumn<Puls, Integer> aften;
+    private TableColumn<Maalinger, String> temp;
 
     @FXML
-    private TableColumn<Puls, LocalDate> dato;
+    private TableColumn<Maalinger, String> puls;
+
+    @FXML
+    private TableColumn<Maalinger, String> spo2;
+
+    @FXML
+    private TableColumn<Maalinger, String> cpr;
 
 
     //PulsGUI - - - - - - - - - - - - - -  - - - - - -SLUT
@@ -79,14 +89,7 @@ public class afterlogin implements Initializable {
 //SpO2GUI - - - - - - - - - - - - - - - - - - - - SLUT
 
 
-    ObservableList<Puls> listPuls = FXCollections.observableArrayList(
-
-            new Puls(150, 130, 120, LocalDate.of(2021, 3, 10)),
-            new Puls(130, 120, 145, LocalDate.of(2021, 3, 11)),
-            new Puls(124, 126, 120, LocalDate.of(2021, 3, 12)),
-            new Puls(163, 132, 115, LocalDate.of(2021, 3, 13)),
-            new Puls(120, 145, 160, LocalDate.of(2021, 3, 14))
-    );
+    ObservableList<Maalinger> listPuls = FXCollections.observableArrayList();
 
 
 
@@ -111,22 +114,49 @@ public class afterlogin implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setCellTemperatur();
-        setCellPuls();
-        setCellSpo2();
 
 
-    }
+            try {
+                java.sql.Connection MySQL = org.example.datamodellen.Connection.getMySQLConnection("Bruger1", "Password1", "projektsilledb");
+                ResultSet RS = MySQL.createStatement().executeQuery("SELECT * FROM projektsilledb.maalinger");
 
+       
+       
 
-    public void setCellPuls() {
-        morgen.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("morgen"));
-        middag.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("middag"));
-        aften.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("aften"));
-        dato.setCellValueFactory(new PropertyValueFactory<Puls, LocalDate>("dato"));
+                while (RS.next()) {
+                    listPuls.add(new Maalinger(RS.getString("ID"), RS.getString("temp"),
+                            RS.getString("puls"), RS.getString("spo2"), RS.getString("CPR")));
+
+                }
+            }catch (SQLException ex){
+                Logger.getLogger(Table.class.getName()).log(Level.SEVERE,null,ex);
+            }
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        temp.setCellValueFactory(new PropertyValueFactory<>("temp"));
+        puls.setCellValueFactory(new PropertyValueFactory<>("puls"));
+        spo2.setCellValueFactory(new PropertyValueFactory<>("spo2"));
+        cpr.setCellValueFactory(new PropertyValueFactory<>("CPR"));
 
         table.setItems(listPuls);
+
+
+         //   setCellTemperatur();
+        //setCellPuls();
+        //setCellSpo2();
+
+
     }
+
+
+  /*  public void setCellPuls() {
+    id.setCellValueFactory(new PropertyValueFactory<>("ID"));
+    id.setCellValueFactory(new PropertyValueFactory<>("temp"));
+    id.setCellValueFactory(new PropertyValueFactory<>("puls"));
+    id.setCellValueFactory(new PropertyValueFactory<>("spo2"));
+
+      table.setItems(listPuls);     */
+  //  }
 
     public void setCellTemperatur() {
         morgentemp.setCellValueFactory(new PropertyValueFactory<Temperatur, Double>("morgen"));
@@ -146,7 +176,4 @@ public class afterlogin implements Initializable {
         tableSpo2.setItems(listSpo2);
 
     }
-
-
-
 }

@@ -2,6 +2,7 @@ package org.example.datamodellen;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Connection {
 
@@ -9,11 +10,8 @@ public class Connection {
     private static String MYSQLDriver = "jdbc:mysql://" + "localhost:3306/";
     private static String url;
 
-    public Connection() {
-    }
 
-
-    java.sql.Connection getMySQLConnection(String username, String password, String Schema) {
+       public static java.sql.Connection getMySQLConnection(String username, String password, String Schema) {
         url = MYSQLDriver + Schema + "?serverTimezone=Europe/Amsterdam&amp";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -73,5 +71,11 @@ public class Connection {
         }
 
 
+
     }
-}
+
+
+
+    }
+
+
