@@ -12,13 +12,5 @@ public class DBtester {
         MySQL.findAllMeasurementsFromPatient(1);
         System.out.println("-------");
         MySQL.findAllMeasurementsFromPatient(2);
-
-
-
-
-
     }
-
-
-
 }

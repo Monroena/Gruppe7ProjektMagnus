@@ -56,10 +56,7 @@ public class Connection {
         }
     }
     public void findAllMeasurementsFromPatient(int ID){
-        ArrayList liste= new ArrayList();
-
         String SQL="SELECT * FROM projektsilledb.maalinger where ID="+ID+";";
-
         try{
             statement=connection.createStatement();
             resultSet=statement.executeQuery(SQL);

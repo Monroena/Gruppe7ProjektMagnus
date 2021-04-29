@@ -115,6 +115,7 @@ public class afterlogin implements Initializable {
         setCellPuls();
         setCellSpo2();
 
+
     }
 
 
@@ -145,6 +146,7 @@ public class afterlogin implements Initializable {
         tableSpo2.setItems(listSpo2);
 
     }
+
 
 
 }
