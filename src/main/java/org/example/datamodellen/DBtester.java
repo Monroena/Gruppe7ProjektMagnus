@@ -9,8 +9,15 @@ public class DBtester {
         Connection MySQL = new Connection();
         MySQL.getMySQLConnection("Bruger1", "Password1", "projektsilledb");
         MySQL.insertMeasurementsIntoTable(1);
-        MySQL.findAllMeasurementsFromPatient(1);
-        System.out.println("-------");
-        MySQL.findAllMeasurementsFromPatient(2);
+
+
+
+
+        for(int n=0; n<10; n++){
+            MySQL.findAllMeasurementsFromPatient(n);
+            System.out.println("--------");
+        }
+
+
     }
 }
