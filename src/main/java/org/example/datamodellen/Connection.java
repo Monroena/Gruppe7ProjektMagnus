@@ -55,10 +55,10 @@ public class Connection {
             }
         }
     }
-    public void findAllMeasurementsFromPatient(int PatientID){
+    public void findAllMeasurementsFromPatient(int ID){
         ArrayList liste= new ArrayList();
 
-        String SQL="SELECT * FROM projektsilledb.maalinger where temp="+PatientID+";";
+        String SQL="SELECT * FROM projektsilledb.maalinger where ID="+ID+";";
 
         try{
             statement=connection.createStatement();
@@ -67,7 +67,8 @@ public class Connection {
                 //hvad skal vi have ud?
                 System.out.println(
                         "id: "+resultSet.getInt(1)+"\n"+
-                                "puls:"+resultSet.getInt("puls")
+                                "puls:"+resultSet.getInt("puls")+"\n"+
+                        "temp: "+resultSet.getDouble("temp")
                 );
             }
         } catch (SQLException throwables) {
