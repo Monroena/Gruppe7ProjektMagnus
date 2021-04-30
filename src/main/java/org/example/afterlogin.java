@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -117,7 +118,8 @@ public class afterlogin implements Initializable {
 
 
             try {
-                java.sql.Connection MySQL = org.example.datamodellen.Connection.getMySQLConnection("Bruger1", "Password1", "projektsilledb");
+                java.sql.Connection MySQL = org.example.datamodellen.Connection.getMySQLConnection("Bruger1",
+                        "Password1", "projektsilledb");
                 ResultSet RS = MySQL.createStatement().executeQuery("SELECT * FROM projektsilledb.maalinger");
 
        
@@ -125,7 +127,8 @@ public class afterlogin implements Initializable {
 
                 while (RS.next()) {
                     listPuls.add(new Maalinger(RS.getString("ID"), RS.getString("temp"),
-                            RS.getString("puls"), RS.getString("spo2"), RS.getString("CPR")));
+                            RS.getString("puls"), RS.getString("spo2"),
+                            RS.getString("CPR")));
 
                 }
             }catch (SQLException ex){
@@ -147,16 +150,6 @@ public class afterlogin implements Initializable {
 
 
     }
-
-
-  /*  public void setCellPuls() {
-    id.setCellValueFactory(new PropertyValueFactory<>("ID"));
-    id.setCellValueFactory(new PropertyValueFactory<>("temp"));
-    id.setCellValueFactory(new PropertyValueFactory<>("puls"));
-    id.setCellValueFactory(new PropertyValueFactory<>("spo2"));
-
-      table.setItems(listPuls);     */
-  //  }
 
     public void setCellTemperatur() {
         morgentemp.setCellValueFactory(new PropertyValueFactory<Temperatur, Double>("morgen"));

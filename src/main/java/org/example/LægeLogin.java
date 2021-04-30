@@ -1,5 +1,6 @@
 package org.example;
 
+import com.mysql.cj.xdevapi.Table;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,8 +13,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LægeLogin implements Initializable {
 
@@ -21,23 +26,28 @@ public class LægeLogin implements Initializable {
     private ChoiceBox<String> Patientvælger;
 
     @FXML
-    private TableView<Puls> table;
+    private TableView<Maalinger> table;
 
     @FXML
     private Button patientknap;
 
     @FXML
-    private TableColumn<Puls, Integer> morgen;
+    private TableColumn<Puls, Integer> id;
 
     @FXML
-    private TableColumn<Puls, Integer> middag;
+    private TableColumn<Puls, String> puls;
 
     @FXML
-    private TableColumn<Puls, Integer> aften;
+    private TableColumn<Puls, String> temp;
 
     @FXML
-    private TableColumn<Puls, LocalDate> dato;
+    private TableColumn<Puls, String> spo2;
 
+    @FXML
+    private TableColumn<Maalinger, String> cpr;
+
+
+    ObservableList<Maalinger> listPuls = FXCollections.observableArrayList();
 
 
     ObservableList list = FXCollections.observableArrayList(
@@ -66,10 +76,44 @@ public class LægeLogin implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setCellvalue(); // den skriver ting ind i rubrikkerne
-        loadData();
+        //setCellvalue(); // den skriver ting ind i rubrikkerne
+       // loadData();
 
-    }
+
+            try {
+                java.sql.Connection MySQL = org.example.datamodellen.Connection.getMySQLConnection("Bruger1",
+                        "Password1", "projektsilledb");
+                ResultSet RS = MySQL.createStatement().executeQuery("SELECT * FROM projektsilledb.maalinger");
+
+
+                while (RS.next()) {
+                    listPuls.add(new Maalinger(RS.getString("ID"), RS.getString("temp"),
+                            RS.getString("puls"), RS.getString("spo2"),
+                            RS.getString("CPR")));
+
+                }
+            }catch (SQLException ex){
+                Logger.getLogger(Table.class.getName()).log(Level.SEVERE,null,ex);
+            }
+
+            id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            temp.setCellValueFactory(new PropertyValueFactory<>("temp"));
+            puls.setCellValueFactory(new PropertyValueFactory<>("puls"));
+            spo2.setCellValueFactory(new PropertyValueFactory<>("spo2"));
+            cpr.setCellValueFactory(new PropertyValueFactory<>("CPR"));
+
+            table.setItems(listPuls);
+
+
+            //   setCellTemperatur();
+            //setCellPuls();
+            //setCellSpo2();
+
+
+
+
+
+        }
 
     @FXML
     void gåTilPatient(ActionEvent event) {
@@ -89,7 +133,7 @@ public class LægeLogin implements Initializable {
 
     }
 
-    private void setCellvalue() {
+    /*private void setCellvalue() {
         morgen.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("morgen"));
         middag.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("middag"));
         aften.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("aften"));
@@ -97,15 +141,15 @@ public class LægeLogin implements Initializable {
 
         table.setItems(liste1);
 
-    }
+    }*/
 
-    private void setCellvalue1() {
+  /*  private void setCellvalue1() {
         morgen.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("morgen"));
         middag.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("middag"));
         aften.setCellValueFactory(new PropertyValueFactory<Puls, Integer>("aften"));
         dato.setCellValueFactory(new PropertyValueFactory<Puls, LocalDate>("dato"));
 
-        table.setItems(liste2);
+        table.setItems(liste1);
 
-    }
+    }*/
 }

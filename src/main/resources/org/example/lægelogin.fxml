@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LægeLogin">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LægeLogin">
    <children>
       <Accordion layoutX="163.0" layoutY="101.0" />
-      <TabPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: #42cef5#42#42cef5#42cef5cef5;" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="-1.0" prefHeight="701.0" prefWidth="1000.0" style="-fx-background-image: #42cef5#42#42cef5#42cef5cef5;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
 
           <Tab text="Patienter">
@@ -26,18 +26,19 @@
                            <font>
                               <Font name="Microsoft Sans Serif" size="12.0" />
                            </font></Button>
-                        <TabPane layoutX="94.0" prefHeight="369.0" prefWidth="507.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane layoutX="94.0" prefHeight="672.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="Puls">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="492.0">
                                        <children>
-                                          <TableView fx:id="table" layoutX="1.0" prefHeight="336.0" prefWidth="506.0">
+                                          <TableView fx:id="table" layoutX="1.0" prefHeight="639.0" prefWidth="905.0">
                                             <columns>
-                                              <TableColumn fx:id="dato" prefWidth="126.5" text="Dato" />
-                                              <TableColumn fx:id="morgen" prefWidth="126.5" text="Morgenpuls" />
-                                                <TableColumn fx:id="middag" prefWidth="126.5" text="Middagspuls" />
-                                                <TableColumn fx:id="aften" prefWidth="126.5" text="Aftenpuls" />
+                                              <TableColumn fx:id="id" prefWidth="181.0" text="id" />
+                                              <TableColumn fx:id="puls" prefWidth="181.0" text="puls" />
+                                                <TableColumn fx:id="temp" prefWidth="181.0" text="temp" />
+                                                <TableColumn fx:id="spo2" prefWidth="181.0" text="spo2" />
+                                                <TableColumn fx:id="cpr" prefWidth="181.0" text="cpr" />
                                             </columns>
                                           </TableView>
                                        </children>

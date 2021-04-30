@@ -3,6 +3,7 @@ package org.example.datamodellen;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Timestamp;
 
 public class Connection {
 
@@ -37,6 +38,7 @@ public class Connection {
     public void insertMeasurementsIntoTable(int id){
 
         for(int n=0; n<10; n++) {
+
             int randomPuls = (int) (40 + (Math.random() * 100));
             double randomTemp = (20 + (Math.random() * 25));
             int randomSpO2 = (int) (100-(6*Math.random()));

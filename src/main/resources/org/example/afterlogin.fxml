@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabpain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.afterlogin">
+<TabPane fx:id="tabpain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.afterlogin">
   <tabs>
       <Tab text="Velkommen">
         <content>
@@ -18,11 +18,11 @@
                <children>
                   <Text layoutX="40.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Velkommen." wrappingWidth="510.9072265625">
                      <font>
-                        <Font name="Microsoft Sans Serif" size="13.0" />
+                        <Font name="Microsoft Sans Serif" size="24.0" />
                      </font></Text>
                   <Text layoutX="40.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For at navigere rundt i dine data, kan du trykke på fanerne øverst på siden." wrappingWidth="401.27783203125">
                      <font>
-                        <Font name="Microsoft Sans Serif" size="13.0" />
+                        <Font name="Microsoft Sans Serif" size="17.0" />
                      </font></Text>
                   <Text layoutX="40.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright© - MSG group">
                      <font>
@@ -36,13 +36,13 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="596.0">
                <children>
-                  <TableView fx:id="table" prefHeight="369.0" prefWidth="600.0">
+                  <TableView fx:id="table" prefHeight="669.0" prefWidth="1000.0">
                     <columns>
-                        <TableColumn fx:id="id" prefWidth="150.0" text="id" />
-                      <TableColumn fx:id="temp" prefWidth="77.0" text="temp" />
-                        <TableColumn fx:id="puls" prefWidth="150.0" text="puls" />
-                        <TableColumn fx:id="spo2" prefWidth="103.0" text="spo2" />
-                        <TableColumn fx:id="cpr" prefWidth="117.0" text="CPR" />
+                        <TableColumn fx:id="id" prefWidth="200.0" text="id" />
+                      <TableColumn fx:id="temp" prefWidth="200.0" text="temp" />
+                        <TableColumn fx:id="puls" prefWidth="200.0" text="puls" />
+                        <TableColumn fx:id="spo2" prefWidth="200.0" text="spo2" />
+                        <TableColumn fx:id="cpr" prefWidth="200.0" text="CPR" />
                     </columns>
                   </TableView>
                </children></AnchorPane>

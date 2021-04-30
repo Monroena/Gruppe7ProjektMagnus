@@ -1,8 +1,11 @@
 package org.example;
 
+import java.sql.Timestamp;
+
 public class Maalinger {
 
     String id, temp, puls, spo2, CPR;
+
 
     public String getId() {
         return id;
