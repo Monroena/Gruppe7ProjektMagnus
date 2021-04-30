@@ -32,7 +32,7 @@
             </AnchorPane>
         </content>
       </Tab>
-    <Tab text="Pulse">
+    <Tab text="Puls">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="596.0">
                <children>

@@ -8,14 +8,12 @@ public class Spo2 {
 
     LocalDate dato;
 
-
     public Spo2(double morgen, double middag, double aften, LocalDate dato) {
         this.morgen = morgen;
         this.middag = middag;
         this.aften = aften;
         this.dato = dato;
     }
-
     public double getMorgen() {
         return morgen;
     }
