@@ -35,15 +35,15 @@
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="250.0" layoutY="332.0" prefHeight="57.0" prefWidth="242.0" promptText="Username">
+            <TextField fx:id="username" layoutX="256.0" layoutY="257.0" prefHeight="57.0" prefWidth="242.0" promptText="Username">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></TextField>
-            <PasswordField fx:id="password" layoutX="250.0" layoutY="253.0" prefHeight="57.0" prefWidth="242.0" promptText="Password">
+            <PasswordField fx:id="password" layoutX="256.0" layoutY="340.0" prefHeight="57.0" prefWidth="242.0" promptText="Password">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></PasswordField>
-            <Button fx:id="loginbutton" layoutX="294.0" layoutY="418.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="35.0" prefWidth="140.0" text="Login">
+            <Button fx:id="loginbutton" layoutX="314.0" layoutY="423.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="35.0" prefWidth="132.0" text="Login">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></Button>
