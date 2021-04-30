@@ -4,40 +4,50 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #11a68a#11a68a;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #11a68a#11a68a;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Login">
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="700.0" prefWidth="339.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="703.0" fitWidth="406.0" layoutX="1.0" layoutY="-2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../pexels-karolina-grabowska-4021773.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="345.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="700.0" prefWidth="597.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="136.0" text="Username" textFill="#11181e">
+            <Label layoutX="139.0" layoutY="271.0" text="Username" textFill="#11181e">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="188.0" text="Password" textFill="#11181e">
+            <Label layoutX="139.0" layoutY="352.0" prefHeight="22.0" prefWidth="109.0" text="Password" textFill="#11181e">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="104.0" layoutY="135.0" promptText="Username">
+            <TextField fx:id="username" layoutX="250.0" layoutY="332.0" prefHeight="57.0" prefWidth="242.0" promptText="Username">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></TextField>
-            <PasswordField fx:id="password" layoutX="104.0" layoutY="187.0" promptText="Password">
+            <PasswordField fx:id="password" layoutX="250.0" layoutY="253.0" prefHeight="57.0" prefWidth="242.0" promptText="Password">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></PasswordField>
-            <Button fx:id="loginbutton" layoutX="104.0" layoutY="251.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="27.0" prefWidth="63.0" text="Log in">
+            <Button fx:id="loginbutton" layoutX="294.0" layoutY="418.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="35.0" prefWidth="140.0" text="Login">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></Button>
-            <Label fx:id="wronglogin" layoutX="104.0" layoutY="96.0" textFill="#dd3434">
+            <Label fx:id="wronglogin" layoutX="248.0" layoutY="241.0" textFill="#dd3434">
                <font>
                   <Font name="Microsoft Sans Serif" size="19.0" />
                </font></Label>
