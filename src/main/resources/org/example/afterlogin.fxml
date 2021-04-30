@@ -32,7 +32,7 @@
             </AnchorPane>
         </content>
       </Tab>
-    <Tab text="Puls">
+    <Tab text="Maalinger">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="596.0">
                <children>
@@ -48,7 +48,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab text="Temperature">
+      <Tab>
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -64,7 +64,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab text="SpO2">
+      <Tab>
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="591.0">
                <children>
@@ -79,7 +79,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-    <Tab text="EKG">
+    <Tab>
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>

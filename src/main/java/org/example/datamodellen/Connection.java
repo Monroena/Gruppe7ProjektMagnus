@@ -42,8 +42,9 @@ public class Connection {
             int randomPuls = (int) (40 + (Math.random() * 100));
             double randomTemp = (20 + (Math.random() * 25));
             int randomSpO2 = (int) (100-(6*Math.random()));
-            String SQL = "insert into maalinger(temp,puls,SpO2) values(?,?,?);";
 
+            //Nu bliver vores 3 variable lagt ind i skemaer.
+            String SQL = "insert into maalinger(temp,puls,SpO2) values(?,?,?);";
             try {
                 preparedStatement = connection.prepareStatement(SQL);
                 preparedStatement.setDouble(1, randomTemp);
@@ -55,13 +56,12 @@ public class Connection {
             }
         }
     }
-    public void findAllMeasurementsFromPatient(int ID){
+    public void findAllMeasurementsFromPatient(int ID){ //bliver brugt til at
         String SQL="SELECT * FROM projektsilledb.maalinger where ID="+ID+";";
         try{
             statement=connection.createStatement();
             resultSet=statement.executeQuery(SQL);
             while (resultSet.next()){
-                //hvad skal vi have ud?
                 System.out.println(
                         "id: "+resultSet.getInt(1)+"\n"+
                                 "puls:"+resultSet.getInt("puls")+"\n"+

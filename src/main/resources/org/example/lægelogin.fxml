@@ -28,7 +28,7 @@
                            </font></Button>
                         <TabPane layoutX="94.0" prefHeight="672.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Puls">
+                            <Tab text="Maalinger">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="492.0">
                                        <children>
@@ -45,17 +45,17 @@
                                     </AnchorPane>
                               </content>
                             </Tab>
-                              <Tab text="Temperatur">
+                              <Tab>
                                 <content>
                                   <AnchorPane fx:id="tableTemperatur" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>
                               </Tab>
-                              <Tab fx:id="tableSpo2" text="Spo2">
+                              <Tab fx:id="tableSpo2">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>
                               </Tab>
-                            <Tab fx:id="tableEKG" text="EKG">
+                            <Tab fx:id="tableEKG">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
